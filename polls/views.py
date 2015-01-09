@@ -167,7 +167,7 @@ def test(request):
 			strs=""
 			for i in range(lo):
 	#print best_questions[i]['links']
-				strs=strs+"<a href="+str(best_questions['links'][i].encode('utf-8').strip())+">"+str(best_questions['title'][i].encode('utf-8').strip())+"</a>"+"<br>"+"<br>"+"\n"
+				strs=strs+"<a href="+str(best_questions['links'][i].encode('utf-8').strip())+">"+str(best_questions['title'][i].encode('utf-8').strip())+"</a>"+"<br>"+"<br>"
 			#return HttpResponse(simplejson.dumps(a_best_questions))
 			return HttpResponse(strs)
 
@@ -189,7 +189,7 @@ def test(request):
 			for i in range(lo):
 	#print best_questions[i]['links']
 				#a[i].replace('[][][][]',',')
-				strs=strs+a[i]+"\n"+"<br>"
+				strs=strs+a[i]+"<br>"+"<br>"
 			#return HttpResponse(simplejson.dumps(a_best_questions))
 			return HttpResponse(strs)
 
