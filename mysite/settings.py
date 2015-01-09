@@ -113,3 +113,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+if request.method == "POST":
+    response = HttpResponse(simplejson.dumps(data),mimetype='application/json')
+    response['Access-Control-Allow-Origin'] = "*"
+    return response
+elif request.method == "OPTIONS":
+    response = HttpResponse("")
+    response['Access-Control-Allow-Origin'] = "*"
+    response['Access-Control-Allow-Methods'] = "POST, OPTIONS"
+    response['Access-Control-Allow-Headers'] = "X-Requested-With"
+    response['Access-Control-Max-Age'] = "1800"
+else:
+    return HttpResponseBadRequest()
